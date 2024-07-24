@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript Functions</title>
+    </head>
+    <body>
+        <div>
+            <p id="demo"></p>
+        </div>
+        
+    <script>
+        //Function expressions
+        function My_function(val){
+            document.getElementById('demo').innerHTML = val*val
+        }
+        My_function(5)
+        
+        //Function Constructor
+        var Myfunction = new Function('a', 'b', 'return a+b')
+        var y = Myfunction(2,3)
+        document.getElementById('demo').innerHTML = 'The sum is ' + y;
+
+        //Self-Invoking Function
+        (function(){
+            alert('Hello! Welcome')
+        })()
+
+        //Functions as Values
+        function Product(a,b){
+            return a*b
+        }
+        let x = Product(2,5)*5
+        document.getElementById('demo').innerHTML = 'The product is ' + x
+
+        //Functions as Objects
+        var body = 'return Math.PI * rad * rad'
+        var circle = new Function('rad', body)
+        alert(circle(5))
+
+        //Arrow functions
+        const Myfunc = (a,b,c) => {return a*b*c}
+        let product = Myfunc(2,3,4)
+        document.getElementById('demo').innerHTML = 'The product of the three digits is '+ product
+
+        //Generator functions
+        function* generateFunc(){
+            yield 1;
+            yield 2;
+            return 3;
+        }
+        let generator = generateFunc()
+        let one = generator.next()
+        let two = generator.next()
+        let three = generator.next()
+        alert(JSON.stringify(one))
+        alert(JSON.stringify(two))
+        alert(JSON.stringify(three))
+
+        //eval(): Evaluates a string and returns a value
+        let a = 5
+        let b = 6
+        let c = 7
+        console.log(eval('a+b'))
+        console.log(eval(c))
+
+    </script>
+        
+    </body>
+</html>

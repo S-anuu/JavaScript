@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head><title>JavaScript Objects</title></head>
+    <body>
+        <h1>Creating JavaScript Objects</h1>
+        <div>
+            <h2>Use of Object Literal:</h2>
+            <p id = 'object_literal'></p>
+        </div>
+
+        <div>
+            <h2>Use of New Keyword:</h2>
+            <p id = 'new_keyword'></p>
+        </div>
+        
+        <div>
+            <h2>Use of Object Constructor:</h2>
+            <p id = 'obj_constructor'></p>
+        </div>
+
+        <div>
+            <h2>Object Method:</h2>
+            <p id = 'demo'></p>
+            <button id='click_me'>Click me</button>
+        </div>
+
+        <div>
+            <h2>Object Accessors:</h2>
+            <p id = 'car'></p>
+        </div>
+
+    <script>
+        //Creating an object using Object Literal
+        var student1 = {
+            name: 'Chris',
+            age: 21,
+            studies: 'Computer Science',
+        }
+
+        document.getElementById('object_literal').innerHTML = student1.name + ' of the age ' + student1.age + ' studies ' + student1.studies + '.'
+
+        //Creating an object using New Keyword
+        var student2 = new Object()
+        student2.name = 'Sara',
+        student2.age = 22,
+        student2.studies = 'Software Engineering'
+
+        document.getElementById('new_keyword').innerHTML = student2.name + ' of the age ' + student2.age + ' studies ' + student2.studies + '.'
+
+        //Creating an object using Object Constructor
+        function Student(name, age, studies){
+            this.name = name
+            this.age = age
+            this.studies = studies
+
+            return this
+        }
+
+        var student3 = Student('Lucky', 24, 'Computer Science')
+
+        document.getElementById('obj_constructor').innerHTML = student3.name + ' of the age ' + student3.age + ' studies ' + student3.studies + '.'
+
+        //Updating properties
+        student1.age = 26
+
+        document.getElementById('object_literal').innerHTML = student1.name + ' of the age ' + student1.age + ' studies ' + student1.studies + '.'
+
+        //Using methonds
+        let user = {
+            name: 'Chris',
+            age: 24,
+        }
+
+        function sayHi(){
+            alert('Hello!')
+        }
+
+        user.message = sayHi
+        document.getElementById('demo').innerHTML = 'Hi ' + user.name
+        document.getElementById('click_me').onclick = user.message
+
+        //Object accessors
+        var car1 = {
+            model: 'BMW 320d',
+            color: 'Navy Blue',
+            fuel_type: 'Diesel',
+
+            get fuel(){
+                return this.fuel_type
+            }
+        }
+
+        document.getElementById('car').innerHTML = car1.fuel
+
+        var car2 = {
+            model: 'Audi A4',
+            color: 'Bright Red',
+            fuel_type: '',
+
+            set fuel(fuel){
+                return this.fuel_type = fuel
+            }
+        }
+
+        car2.fuel = 'Petrol'
+        document.getElementById('car').innerHTML = car2.fuel_type
+    </script>
+    </body>
+</html>

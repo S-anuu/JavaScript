@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            JavaScript Closures
+        </title>
+    </head>
+    <body>
+        <p id = 'demo'></p>
+        <script>
+            //Global and Local variables
+            let a = 10
+            function My_function(){
+                let b = 20
+                document.write(a+b)
+            }
+            My_function()
+
+            var x = 10
+            function First_func(){
+                var y = 20
+                function Second_func(){
+                    var z = x+y
+                    return z
+                }
+                return Second_func()
+            }
+            var sum = First_func()
+            document.write('The sum is ' + sum)
+        </script>
+    </body>
+</html>

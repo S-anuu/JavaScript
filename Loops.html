@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Loops</title>
+    </head>
+    <body>
+        <div id ='forLoop'>
+            <h3>For Loop:</h1>
+        </div>
+        <div id="whileLoop">
+            <h3>While Loop:</h2>
+        </div>
+        <div id="doWhileLoop">
+            <h3>Do While Loop:</h2>
+        </div>
+        <div id="breakOutOfLoop">
+            <h3>Breaking Out Of Loop:</h2>
+        </div>
+        <div id="skipALoop">
+            <h3>Skipping a Loop Cycle:</h2>
+        </div>
+           
+    </body>
+    <script>
+        //For Loop
+        forLoop = document.getElementById('forLoop')
+        let x 
+        for(x=0;x<5;x++){
+            const paragraph = document.createElement('p')
+            paragraph.textContent = x
+            
+            forLoop.appendChild(paragraph)
+        }
+       
+        //WhileLoop
+        whileLoop = document.getElementById('whileLoop')
+        let y=1
+        while(y<=5){
+            const paragraph = document.createElement('p')
+            paragraph.textContent = y
+            y++
+
+            whileLoop.appendChild(paragraph)
+        }       
+
+        //Do while Loop
+        doWhileLoop = document.getElementById('doWhileLoop')
+        let z = 5
+        do{
+            const paragraph = document.createElement('p')
+            paragraph.textContent = z
+            z++
+
+            doWhileLoop.appendChild(paragraph)
+        }
+        while(z<10)
+
+        //Breaking out of Loop
+        breakOutOfLoop = document.getElementById('breakOutOfLoop')
+        for(i = 1;i<=10;i++){
+            const paragraph = document.createElement('p')
+            paragraph.textContent = i
+
+            if(i == 5){
+                break
+            }
+
+            breakOutOfLoop.appendChild(paragraph)
+        }
+
+        //Skipping a loop cycle
+        skipALoop = document.getElementById('skipALoop')
+        for(i = 1;i<=10;i++){
+            const paragraph = document.createElement('p')
+            paragraph.textContent = i
+
+            if(i == 5){
+                continue
+            }
+
+            skipALoop.appendChild(paragraph)
+        }
+    </script>
+</html>
