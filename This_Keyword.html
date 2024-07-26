@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript This-Keyword</title>
+    </head>
+    <body>
+        <script>
+            var value = 50
+
+            function My_function(){
+                var value = 100
+                alert('value: '+ value)
+                alert('This value: '+ this.value)
+            }
+            My_function()
+
+            const random = {
+                name: 'John',
+                info(){
+                    console.log('Hi! My name is '+ this.name)
+                }
+            }
+            random.info()
+
+            const random1 =  {
+                name: 'Tutorial',
+                video: ['JavaScript', 'this', 'keyword'],
+                info(){
+                    this.video.forEach(function(tag){
+                        console.log(this.name, tag)
+                    },this)
+                }
+            }
+            random1.info()
+        </script>
+    </body>
+</html>
